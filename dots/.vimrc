@@ -20,6 +20,9 @@ set expandtab
 set tabstop=4
 set shiftwidth=4
 
+set pastetoggle=<F10>
+
+
 set number
 
 set hlsearch
@@ -50,7 +53,8 @@ Plug 'alvan/vim-closetag'
 " ---> files on which to activate tags auto-closing <---
   let g:closetag_filenames = '*.html,*.xhtml,*.xml,*.vue,*.phtml,*.js,*.jsx,*.coffee,*.erb'
 
-Plug 'jiangmiao/auto-pairs'
+Plug 'bfrg/vim-cpp-modern'
+Plug 'rust-lang/rust.vim'
 
 call plug#end()
 
