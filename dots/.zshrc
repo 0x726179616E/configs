@@ -4,13 +4,15 @@ PS1="%{$fg[cyan]%}%n@%m%{$reset_color%}:%{$fg[yellow]%}%~%{$reset_color%}$ "
 
 alias ls='ls -1G --color'
 
-# opening directory/file in VSCodium
-alias vsc="open $1 -a "VSC""
+# too lazy to type nvim
+alias vim="nvim"
+alias vi="nvim"
+alias oldvim="vim"
 
 # lazy git
 alias gitup="~/scripts/gitup $1"
 
-export VISUAL=vim
+export VISUAL=nvim
 export EDITOR="$VISUAL"
 
 # Intel homebrew (old) command: brow 
@@ -40,18 +42,4 @@ export PATH="$PATH:/Users/rayker/.local/bin"
 # Created by `pipx` on 2022-11-27 20:06:59
 export PATH="$PATH:/Users/rayker/Library/Python/3.10/bin"
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/rayker/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/Users/rayker/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/rayker/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/Users/rayker/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
+alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'

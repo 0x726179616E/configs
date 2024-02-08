@@ -38,7 +38,21 @@ set scrolloff=5
 
 set laststatus=2
 
+
 filetype plugin indent on
+
+command! -range=% ClangFormat <line1>,<line2>!clang-format
+
+function! PreserveCursorPosition()
+  let l:pos = getpos(".")
+  execute 'ClangFormat'
+  call setpos('.', l:pos)
+endfunction
+
+augroup fmt
+  autocmd!
+  autocmd BufWritePre *.cpp,*.h,*.hpp,*.cxx,*.cc call PreserveCursorPosition()
+augroup END
 
 " this will install vim-plug if not installed
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
@@ -55,5 +69,4 @@ call plug#begin('~/.config/nvim/plugged')
 
 	Plug 'bfrg/vim-cpp-modern'
 	Plug 'rust-lang/rust.vim'
-
 call plug#end()
