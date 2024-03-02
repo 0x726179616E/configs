@@ -43,3 +43,4 @@ export PATH="$PATH:/Users/rayker/.local/bin"
 export PATH="$PATH:/Users/rayker/Library/Python/3.10/bin"
 
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
+. "$HOME/.cargo/env"
